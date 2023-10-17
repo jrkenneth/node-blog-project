@@ -13,6 +13,7 @@
       <label for="body">Blog body:</label>
       <textarea id="body" name="body" required><%= blog.body %></textarea>
       <button class="submit" type="submit">Submit</button> 
+      <button class="button" id="cancelEvent">Cancel</button> 
     </form> 
   </div>
 
@@ -41,6 +42,10 @@
       .catch(err => console.log(err));
     });
     
+
+    document.getElementById("cancelEvent").onclick = function () {
+        location.href = `/blogs/${form.dataset.doc}`;
+    };
   </script>
 </body>
 </html>

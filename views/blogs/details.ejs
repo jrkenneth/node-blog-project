@@ -9,12 +9,14 @@
     <div class="content">
       <p><%= blog.body %></p>
     </div>
-    <a class="update" href="/blogs/update/<%= blog._id %>">
-      Update
-    </a>
-    <a class="delete" data-doc="<%= blog._id %>">
-      <img src="/trashcan.svg" alt="delete icon">
-    </a>
+    <% if (user) { %>
+      <a class="update" href="/blogs/update/<%= blog._id %>">
+        Update
+      </a>
+      <a class="delete" data-doc="<%= blog._id %>">
+        <img src="/trashcan.svg" alt="delete icon">
+      </a>
+    <% } %>
   </div>
 
   <%- include("../partials/footer.ejs") %>
